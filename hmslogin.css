@@ -1,0 +1,43 @@
+.container-fluid{
+	width: 400px;
+	margin-top:60px;
+	margin-bottom:60px;
+	color:#34495E;
+}
+button:hover{
+	cursor: pointer;
+}
+
+body{
+	background: url("images2.png") no-repeat ;
+	background-size: cover;
+}
+
+.users{
+	background-color: #25289a;
+}
+.container{
+	width: 60%;
+	height: 80%;
+	display : flex;
+	box-shadow: 1rem 2rem 4rem rgba(0,0,0,0.2);
+	min-width: 60rem;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	font-family: "Arial", sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+}
+.users h1{
+	font-size: 5rem; 
+	font-weight: 100;
+}
+.text{
+	font-size: 3rem;
+	
+}
