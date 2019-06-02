@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-3">
           <label for="dateid">Date</label>
-          <input type="date" class="form-control" id="Dateid" placeholder="DD/MM/YYYY">
+          <input type="date" class="form-control" id="dateid" placeholder="DD/MM/YYYY">
         </div>
         </div>
       <div class="row">
@@ -67,11 +67,11 @@ $('#addId').on('click', function(e) {
     date : date, patient : patient,  medecin : medecin, operation : operation, bloc : bloc
           }
 console.log(data)
-/*$.post("addoperation.php", {data: JSON.stringify(data)},function(response){
+$.post("addoperation.php", {data: JSON.stringify(data)},function(response){
             console.log( "Data Loaded: ", response);
             history.pushState({url: "tableoperation.php"}, "", "tableoperation.php");
             document.location.reload(true); 
-        });*/
+        });
 })
 </script>
 </html>
