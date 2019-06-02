@@ -17,8 +17,8 @@
     <form action="operationfunc.php" method="post">
     <div class="row">
         <div class="col-3">
-          <label for="inputdate">Date</label>
-          <input type="date" class="form-control" id="Date" placeholder="DD/MM/YYYY">
+          <label for="dateid">Date</label>
+          <input type="date" class="form-control" id="Dateid" placeholder="DD/MM/YYYY">
         </div>
         </div>
       <div class="row">
@@ -54,14 +54,11 @@
   </div>
 </body>
 <script>
-$('.photo-container').on('click', function(){
-  console.log('test')
-  $('#fileinput').click();
-})
+
 
 $('#addId').on('click', function(e) {
   e.preventDefault();
-  var date = $('#date').val();
+  var date = $('#dateid').val();
   var patient = $('#patient').val();
   var medecin = $('#medecin').val();
   var operation = $('#operation').val();
@@ -70,11 +67,11 @@ $('#addId').on('click', function(e) {
     date : date, patient : patient,  medecin : medecin, operation : operation, bloc : bloc
           }
 console.log(data)
-$.post("addoperation.php", {data: JSON.stringify(data)},function(response){
+/*$.post("addoperation.php", {data: JSON.stringify(data)},function(response){
             console.log( "Data Loaded: ", response);
             history.pushState({url: "tableoperation.php"}, "", "tableoperation.php");
             document.location.reload(true); 
-        });
+        });*/
 })
 </script>
 </html>
