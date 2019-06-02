@@ -1,4 +1,5 @@
 <!doctype html>
+<?php include("operationfunc.php"); ?>
 <html>
 
 <head>
@@ -17,7 +18,7 @@
     <div class="row">
         <div class="col-3">
           <label for="inputdate">Date</label>
-          <input type="date" class="form-control" id="Date" placeholder="DD/MM/YY">
+          <input type="date" class="form-control" id="Date" placeholder="DD/MM/YYYY">
         </div>
         </div>
       <div class="row">
@@ -68,8 +69,8 @@ $('#addId').on('click', function(e) {
   var data={
     date : date, patient : patient,  medecin : medecin, operation : operation, bloc : bloc
           }
-
-$.post("stafffunc.php", {data: JSON.stringify(data)},function(response){
+console.log(data)
+$.post("addoperation.php", {data: JSON.stringify(data)},function(response){
             console.log( "Data Loaded: ", response);
             history.pushState({url: "tableoperation.php"}, "", "tableoperation.php");
             document.location.reload(true); 

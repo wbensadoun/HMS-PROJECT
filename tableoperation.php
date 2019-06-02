@@ -30,8 +30,8 @@
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">Patients</th>
-      <th scope="col">Medecins</th>
+      <th scope="col">Patient</th>
+      <th scope="col">Medecin</th>
       <th scope="col">Operation</th>
       <th scope="col">Bloc</th>
     </tr>
@@ -45,7 +45,6 @@
 
 <div class="row">
 <div class="col-md-12"><a href="admin-panel.php" class="btn btn-danger" style="margin-left: 85.5%;">Retour</a></div>
-
 </div>
 
 

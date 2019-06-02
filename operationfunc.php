@@ -5,8 +5,8 @@ $con = mysqli_connect("localhost", "root", "", "hmsdb");
 if(isset($_POST['data'])){
     $data = json_decode($_POST['data']);
     $date = $data->date;
-    $patients = $data->patient;
-    $medecins = $data->medecin;
+    $patient = $data->patient;
+    $medecin = $data->medecin;
     $operation = $data->operation;
     $bloc = $data->bloc;
     $id = random_int(1, 1000000);
