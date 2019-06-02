@@ -37,7 +37,7 @@ while ($row=mysqli_fetch_array($result)) {
 	echo "<tr>
       <td>$nom</td>
       <td>$prenom</td>
-      <td>email</td>
+      <td>$email</td>
       <td>$contact</td>
       <td>$docapp</td>
     </tr>";

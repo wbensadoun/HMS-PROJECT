@@ -11,8 +11,9 @@
 </head>
 
 <body>
+<div class="jumbotron" style="background: url('image3.jpg'); height: 300px; background-size: cover; no-repeat;"></div>
   <div class="container">
-    <form>
+    <form action="stafffunc.php" method="post">
       <div class="row">
         <div class="col-6">
           <label for="inputnom">Nom</label>
@@ -26,16 +27,20 @@
       <div class="row">
         <div class="form-group col-md-6">
           <label for="inputTel">Numéro de téléphone :</label>
-          <input type="text" class="form-control" id="phone" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="phone" placeholder="Numéro">
         </div>
         <div class="form-group col-md-6">
           <label for="inputEmail4">Email</label>
           <input type="email" class="form-control" id="email" placeholder="Email">
         </div>
-
+        
         <div class="form-group col-md-6">
-          <div class="photo-container" style="width : 100px; height : 100px; background-color :grey;">
-            Photo
+          <div class="photo-container" style="width : 100px; height : 100px; 
+    background-color: grey;
+    background-image: url('nophoto.png');
+    background-repeat: no-repeat;
+    background-size: 7rem 5.5rem;
+    background-position: 50%;">
           </div>
         </div>
         <input type="file" value="choisir une photo" id="fileinput" style="display : none;">
@@ -53,7 +58,8 @@
   </div>
   </div>
   <div class="row">
-    <div class="col-md-6"><button type="submit" id="addId" class="btn btn-primary" style="float: right;">Ajouter</button></div>
+  <div class="col-md-6">
+  <button type="submit" id="addId" class="btn btn-primary" style="float: right;">Ajouter</button></div>
   </div>
   </form>
   </div>
@@ -75,24 +81,12 @@ $('#addId').on('click', function(e) {
   var data={
     nom : nom, prenom : prenom,  email : email, phone : phone, specialite : specialite
           }
-console.log(data)
 
-
-  $.ajax({
-        url:'stafffunc.php',
-        type:"POST",
-        data: JSON.stringify(data),
-        contentType:"application/json",
-        dataType:"json",
-        success: function(response){
+$.post("stafffunc.php", {data: JSON.stringify(data)},function(response){
             console.log( "Data Loaded: ", response);
             history.pushState({url: "viewstaff.php"}, "", "viewstaff.php");
             document.location.reload(true); 
-        },
-        error: function(err){
-            console.log(err)
-        }
-    })
+        });
 })
 </script>
 </html>

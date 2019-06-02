@@ -7,15 +7,14 @@ if(isset($_POST['login_submit'])){
 	$password=$_POST['password'];
 	$query="select * from logintb where username='$username' and password='$password';";
 	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
-{
+	if(mysqli_num_rows($result)==1){
 		$_SESSION['username']=$username;
 		header("Location:admin-panel.php");
 	}
-else
-{
-$_SESSION['errmsg']="Login ou mot de passe incorrect";
-}
+	else
+	{
+	$_SESSION['errmsg']="Login ou mot de passe incorrect";
+	}
 }
 	if(isset($_POST['pat_submit']))
 {
@@ -52,5 +51,6 @@ function get_patient_details(){
   	 </tr>";
 	}
 
+	
 }
 ?>
